@@ -1,9 +1,45 @@
-# Sanity Clean Content Studio
+# ElvisDev - Portfolio CMS
 
-Congratulations, you have now installed the Sanity Content Studio, an open-source real-time content editing environment connected to the Sanity backend.
+Sanity Studio for managing portfolio project content. The frontend portfolio lives in a separate codebase.
 
-Now you can do the following things:
+## Tech Stack
 
-- [Read “getting started” in the docs](https://www.sanity.io/docs/introduction/getting-started?utm_source=readme)
-- [Join the Sanity community](https://www.sanity.io/community/join?utm_source=readme)
-- [Extend and build plugins](https://www.sanity.io/docs/content-studio/extending?utm_source=readme)
+- Sanity v6.2.0
+- React 19
+- TypeScript
+- pnpm
+
+## Getting Started
+
+```bash
+pnpm install
+pnpm dev
+```
+
+### Build & Deploy
+
+```bash
+pnpm build
+pnpm deploy
+```
+
+## Schema: Project
+
+| Field | Type | Required | Description |
+|---|---|---|---|
+| title | string | yes | Project title |
+| subtitle | string | no | Project subtitle |
+| slug | slug | yes | URL-friendly identifier |
+| status | string (radio) | yes | `unfinished` / `finished` |
+| techStack | array[string] | no | Tags for technologies used |
+| projectLink | url | no | Link to live project |
+| previewImage | image | no | Thumbnail with alt text |
+| heroImage | image | no | Hero image with alt text |
+| content | array[block] | no | Rich text (Portable Text) |
+
+## Scripts
+
+- `pnpm dev` — Start development server
+- `pnpm build` — Build for production
+- `pnpm deploy` — Deploy Studio
+- `pnpm deploy-graphql` — Deploy GraphQL API
